@@ -345,10 +345,11 @@ class RegHospital{
                                              if (c.getDue_date() > s.getDay_no()) {
                                                  flag = false;
                                              }
-
                                              if(c.getStatus().equals("PARTIALLY VACCINATED") && !c.getVax_given().equals(s.getVaccine())){
                                                  flag =false;
                                              }
+                                             if(s.getQ()==0)
+                                                 flag = false;
                                          }
 
                                          if (status.equals("FULLY VACCINATED")){
@@ -419,7 +420,6 @@ class RegHospital{
                                          System.out.println(id + " " + h.getHospital_name());
                                      }
                                  }
-
                              }
                          }
                          System.out.print("Enter hospital ID: ");
@@ -444,6 +444,8 @@ class RegHospital{
                                              if (c.getStatus().equals("PARTIALLY VACCINATED") && !c.getVax_given().equals(s.getVaccine())) {
                                                  flag = false;
                                              }
+                                             if(s.getQ()==0)
+                                                 flag = false;
                                          }
                                          if (status.equals("FULLY VACCINATED")) {
                                              System.out.println("Citizen is fully vaccinated");
